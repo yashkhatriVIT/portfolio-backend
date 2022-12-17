@@ -18,9 +18,6 @@ const contactEmail = nodemailer.createTransport({
   },
 });
 
-if(process.env.NODE_ENV == 'production'){
-  app.use(express.static('client/build'));
-}
 contactEmail.verify((error) => {
   if (error) {
     console.log(error);
